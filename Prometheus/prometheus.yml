@@ -1,0 +1,16 @@
+# my global config
+global:
+  scrape_interval: 20s 
+  evaluation_interval: 20s # Evaluate rules every 20 seconds. 
+
+# A scrape configuration containing exactly one endpoint to scrape:
+scrape_configs:
+# The job name is added as a label `job=<job_name>` to any timeseries
+scraped from this config.
+- job_name: "prometheus"
+metrics_path: '/metrics'
+scheme: 'https'
+scrape_interval: 10s # override default value
+scrape_timeout: 10s # override default value
+static_configs:
+- targets: ["laughing-space-adventure-x5p6gq65wp4xf9v5p-9090.app.github.dev"] 
